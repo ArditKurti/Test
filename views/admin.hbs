@@ -1,0 +1,86 @@
+<div class="content">
+
+    <div class="row">
+        <div class="box box-info ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Krijo Punonjes</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <form action="/login/register" method="post" class="form-horizontal">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputFullName" class="col-sm-2 control-label">Emer Mbiemer</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" name="fullname" class="form-control placeholders-login" id="inputFullName" placeholder="Emer Mbiemer" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputUserName" class="col-sm-2 control-label">Username</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control placeholders-login" id="inputUserName" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+
+                        <div class="col-sm-10">
+                            <input type="password" name="password" class="form-control placeholders-login" id="inputPassword" placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn-lg btn-info pull-right">Crea</button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box box-info ">
+            <div class="box-header with-border">
+                <h3 class="box-title">Lista Punesuarve</h3>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <th>Emer Mbiemer</th>
+                        <th>Username</th>
+                        <th>Admin</th>
+                        <th>Teknik</th>
+                        <th>Action</th>
+                    </tr>
+                    {{#each users}}
+                        <tr>
+                            <td class="id">{{_id}}</td>
+                            <td>{{fullname}}</td>
+                            <td>{{username}}</td>
+                            <td>
+                                <input type="checkbox" class="isAdmin" data-toggle="toggle" data-isAdmin={{isAdmin}} data-on="SI" data-off="NO">
+                            </td>
+                            <td>
+                                <input type="checkbox" class="isTeknikTest" data-toggle="toggle" data-isTeknikTest={{isTeknikTest}} data-on="SI" data-off="NO">
+                            </td>
+                            <td><button type="button" class="btn btn-sm btn-danger btn-flat delete-button">Delete</button></td>
+                        </tr>
+                    {{/each}}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
